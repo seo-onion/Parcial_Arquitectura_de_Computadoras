@@ -1,0 +1,97 @@
+$date
+	Mon May 26 20:47:26 2025
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module tb_struct $end
+$var wire 1 ! F $end
+$var reg 1 " a $end
+$var reg 1 # b $end
+$var reg 1 $ c $end
+$var reg 1 % d $end
+$scope module uut $end
+$var wire 1 ! F $end
+$var wire 1 " a $end
+$var wire 1 & a_n $end
+$var wire 1 ' and1 $end
+$var wire 1 ( and2 $end
+$var wire 1 # b $end
+$var wire 1 ) b_n $end
+$var wire 1 $ c $end
+$var wire 1 * c_n $end
+$var wire 1 % d $end
+$var wire 1 + d_n $end
+$var wire 1 , or1 $end
+$var wire 1 - or2 $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+x-
+x,
+x+
+x*
+x)
+x(
+x'
+x&
+0%
+0$
+0#
+1"
+x!
+$end
+#1000
+1+
+1*
+1)
+0&
+#3000
+1,
+#4000
+1!
+1'
+1-
+0(
+#10000
+0"
+#11000
+1&
+#13000
+0!
+0'
+0,
+#14000
+1!
+1(
+#30000
+1$
+1"
+#31000
+0*
+0&
+#33000
+1'
+1,
+#34000
+0(
+#40000
+0"
+#41000
+1&
+#43000
+0!
+0'
+0,
+#44000
+1!
+1(
+#60000

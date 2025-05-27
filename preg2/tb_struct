@@ -1,0 +1,99 @@
+#! /usr/bin/vvp
+:ivl_version "12.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision - 12;
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/system.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_sys.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_textio.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/v2005_math.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/va_math.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/v2009.vpi";
+S_0x5a37e3a4d660 .scope package, "$unit" "$unit" 2 1;
+ .timescale 0 0;
+S_0x5a37e3a4d7f0 .scope module, "tb_struct" "tb_struct" 3 3;
+ .timescale -9 -12;
+v0x5a37e3a62860_0 .net "F", 0 0, L_0x5a37e3a638f0;  1 drivers
+v0x5a37e3a62920_0 .var "a", 0 0;
+v0x5a37e3a629f0_0 .var "b", 0 0;
+v0x5a37e3a62af0_0 .var "c", 0 0;
+v0x5a37e3a62bc0_0 .var "d", 0 0;
+S_0x5a37e3a11490 .scope module, "uut" "glitch_detector_struct" 3 8, 4 4 0, S_0x5a37e3a4d7f0;
+ .timescale -9 -12;
+    .port_info 0 /INPUT 1 "a";
+    .port_info 1 /INPUT 1 "b";
+    .port_info 2 /INPUT 1 "c";
+    .port_info 3 /INPUT 1 "d";
+    .port_info 4 /OUTPUT 1 "F";
+L_0x5a37e3a62c60/d .functor NOT 1, v0x5a37e3a62920_0, C4<0>, C4<0>, C4<0>;
+L_0x5a37e3a62c60 .delay 1 (1000,1000,1000) L_0x5a37e3a62c60/d;
+L_0x5a37e3a62df0/d .functor NOT 1, v0x5a37e3a62bc0_0, C4<0>, C4<0>, C4<0>;
+L_0x5a37e3a62df0 .delay 1 (1000,1000,1000) L_0x5a37e3a62df0/d;
+L_0x5a37e3a62f50/d .functor NOT 1, v0x5a37e3a629f0_0, C4<0>, C4<0>, C4<0>;
+L_0x5a37e3a62f50 .delay 1 (1000,1000,1000) L_0x5a37e3a62f50/d;
+L_0x5a37e3a630b0/d .functor NOT 1, v0x5a37e3a62af0_0, C4<0>, C4<0>, C4<0>;
+L_0x5a37e3a630b0 .delay 1 (1000,1000,1000) L_0x5a37e3a630b0/d;
+L_0x5a37e3a63240/d .functor OR 1, L_0x5a37e3a62f50, L_0x5a37e3a630b0, C4<0>, C4<0>;
+L_0x5a37e3a63240 .delay 1 (3000,3000,3000) L_0x5a37e3a63240/d;
+L_0x5a37e3a633f0/d .functor OR 1, v0x5a37e3a62920_0, v0x5a37e3a629f0_0, C4<0>, C4<0>;
+L_0x5a37e3a633f0 .delay 1 (3000,3000,3000) L_0x5a37e3a633f0/d;
+L_0x5a37e3a63540/d .functor AND 1, L_0x5a37e3a633f0, L_0x5a37e3a63240, C4<1>, C4<1>;
+L_0x5a37e3a63540 .delay 1 (0,0,0) L_0x5a37e3a63540/d;
+L_0x5a37e3a636f0/d .functor AND 1, L_0x5a37e3a62c60, L_0x5a37e3a62df0, C4<1>, C4<1>;
+L_0x5a37e3a636f0 .delay 1 (3000,3000,3000) L_0x5a37e3a636f0/d;
+L_0x5a37e3a638f0/d .functor OR 1, L_0x5a37e3a63540, L_0x5a37e3a636f0, C4<0>, C4<0>;
+L_0x5a37e3a638f0 .delay 1 (0,0,0) L_0x5a37e3a638f0/d;
+v0x5a37e3a4dec0_0 .net "F", 0 0, L_0x5a37e3a638f0;  alias, 1 drivers
+v0x5a37e3a61e60_0 .net "a", 0 0, v0x5a37e3a62920_0;  1 drivers
+v0x5a37e3a61f20_0 .net "a_n", 0 0, L_0x5a37e3a62c60;  1 drivers
+v0x5a37e3a61ff0_0 .net "and1", 0 0, L_0x5a37e3a63540;  1 drivers
+v0x5a37e3a620b0_0 .net "and2", 0 0, L_0x5a37e3a636f0;  1 drivers
+v0x5a37e3a621c0_0 .net "b", 0 0, v0x5a37e3a629f0_0;  1 drivers
+v0x5a37e3a62280_0 .net "b_n", 0 0, L_0x5a37e3a62f50;  1 drivers
+v0x5a37e3a62340_0 .net "c", 0 0, v0x5a37e3a62af0_0;  1 drivers
+v0x5a37e3a62400_0 .net "c_n", 0 0, L_0x5a37e3a630b0;  1 drivers
+v0x5a37e3a624c0_0 .net "d", 0 0, v0x5a37e3a62bc0_0;  1 drivers
+v0x5a37e3a62580_0 .net "d_n", 0 0, L_0x5a37e3a62df0;  1 drivers
+v0x5a37e3a62640_0 .net "or1", 0 0, L_0x5a37e3a633f0;  1 drivers
+v0x5a37e3a62700_0 .net "or2", 0 0, L_0x5a37e3a63240;  1 drivers
+    .scope S_0x5a37e3a4d7f0;
+T_0 ;
+    %vpi_call/w 3 14 "$dumpfile", "glitch_struct.vcd" {0 0 0};
+    %vpi_call/w 3 15 "$dumpvars", 32'sb00000000000000000000000000000000, S_0x5a37e3a4d7f0 {0 0 0};
+    %end;
+    .thread T_0;
+    .scope S_0x5a37e3a4d7f0;
+T_1 ;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x5a37e3a62920_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x5a37e3a629f0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x5a37e3a62af0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x5a37e3a62bc0_0, 0, 1;
+    %delay 10000, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x5a37e3a62920_0, 0, 1;
+    %delay 20000, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x5a37e3a62920_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x5a37e3a629f0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x5a37e3a62af0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x5a37e3a62bc0_0, 0, 1;
+    %delay 10000, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x5a37e3a62920_0, 0, 1;
+    %delay 20000, 0;
+    %vpi_call/w 3 35 "$finish" {0 0 0};
+    %end;
+    .thread T_1;
+# The file index is used to find the file name in the following table.
+:file_names 5;
+    "N/A";
+    "<interactive>";
+    "-";
+    "tb_struct.v";
+    "glitch_struct.v";
